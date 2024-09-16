@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement('li');
         li.innerHTML = `
             ${taskText}
-            <button class="remove-btn">Remove</button>
+            <button class="remove-btn">Remove Task</button>
         `;
         const removeBtn = li.querySelector('.remove-btn');
         removeBtn.addEventListener('click', () => {
