@@ -5,18 +5,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
+    <title>TaskMaster Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>To-Do-List</h1>
-        <div class="input-container">
-            <input type="text" id="taskInput" placeholder="Add a new task...">
-            <button id="addTaskBtn">Add Task</button>
-        </div>
-        <ul id="taskList"></ul>
+    <div class="app-container">
+        <header>
+            <h1>TaskMaster Pro</h1>
+            <p class="tagline">Organize your life, one task at a time</p>
+        </header>
+        
+        <main>
+            <div class="sidebar">
+                <div class="filters">
+                    <h2>Filters</h2>
+                    <ul id="categoryFilters">
+                        <li data-category="all" class="active">All Tasks</li>
+                        <li data-category="work">Work</li>
+                        <li data-category="personal">Personal</li>
+                        <li data-category="shopping">Shopping</li>
+                        <li data-category="other">Other</li>
+                    </ul>
+                    <div class="status-filters">
+                        <button id="showAll" class="active">All</button>
+                        <button id="showActive">Active</button>
+                        <button id="showCompleted">Completed</button>
+                    </div>
+                </div>
+                <div class="stats">
+                    <h2>Statistics</h2>
+                    <p>Total Tasks: <span id="totalTasks">0</span></p>
+                    <p>Completed: <span id="completedTasks">0</span></p>
+                    <p>Pending: <span id="pendingTasks">0</span></p>
+                </div>
+            </div>
+        
+            <div class="content">
+                <div class="task-form">
+                    <input type="text" id="taskInput" placeholder="What needs to be done?">
+                    <div class="task-options">
+                        <select id="taskCategory">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select id="taskPriority">
+                            <option value="low">Low Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <input type="date" id="taskDueDate">
+                        <button id="addTaskBtn">Add Task</button>
+                    </div>
+                </div>
+                
+                <div class="task-container">
+                    <h2>My Tasks</h2>
+                    <ul id="taskList" class="task-list"></ul>
+                </div>
+                
+                <div class="task-actions">
+                    <button id="clearCompletedBtn">Clear Completed</button>
+                    <button id="clearAllBtn">Clear All</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Drag and drop tasks to reorder • Double-click to edit</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
